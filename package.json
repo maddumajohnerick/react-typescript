@@ -4,6 +4,7 @@
 	"description": "sample react project with typescript",
 	"main": "index.js",
 	"scripts": {
+		"start": "webpack-dev-server --mode development --open",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -25,6 +26,9 @@
 	"devDependencies": {
 		"awesome-typescript-loader": "^5.2.1",
 		"source-map-loader": "^0.2.4",
-		"typescript": "^3.1.1"
+		"typescript": "^3.1.1",
+		"webpack": "^4.20.2",
+		"webpack-cli": "^3.1.2",
+		"webpack-dev-server": "^3.1.9"
 	}
 }
