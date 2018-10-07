@@ -3,43 +3,43 @@ import { Link } from 'react-router-dom';
 import * as $ from 'jquery';
 
 class Art extends React.Component<any, {}> {
-  likeArt(event: any) {
-    event.preventDefault();
-    
-    const { artsActions, art } = this.props;
-    art.liked = !art.liked;
+	likeArt(event: any) {
+		event.preventDefault();
 
-    artsActions.editArtsSuccess(art);
-  }
+		const { artsActions, art } = this.props;
+		art.liked = !art.liked;
 
-  componentDidMount() {
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-      $('.art-container').addClass('in-mobile');
-    }
-  }
+		artsActions.editArtsSuccess(art);
+	}
 
-  render() {
-    let { art } = this.props;
+	componentDidMount() {
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			$('.art-container').addClass('in-mobile');
+		}
+	}
 
-    return (
-      <Link to={`/view/${art._id}`} className="col-md-3">
-        <div id={art._id}>
-          <div className="col-md-12 art-container">
-            <div className="image-container" style={{ backgroundImage: `url(${art ? art.src : ''})`}}>
-              <div className="info-container">
-                <div className="text-holder">
-                  {art.title}
-                </div>
-                <div className={`like-holder ${art.liked ? 'liked' : ''}`} onClick={(e) => this.likeArt(e)}>
-                  <i className="fa fa-heart" aria-hidden="true"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Link>
-    );
-  }
+	render() {
+		let { art } = this.props;
+
+		return (
+			<Link to={`/view/${art._id}`} className="col-md-3">
+				<div id={art._id}>
+					<div className="col-md-12 art-container">
+						<div className="image-container" style={{ backgroundImage: `url(${art ? art.src : ''})` }}>
+							<div className="info-container">
+								<div className="text-holder">
+									{art.title}
+								</div>
+								<div className={`like-holder ${art.liked ? 'liked' : ''}`} onClick={(e) => this.likeArt(e)}>
+									<i className="fa fa-heart" aria-hidden="true"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</Link>
+		);
+	}
 }
 
 export default Art;

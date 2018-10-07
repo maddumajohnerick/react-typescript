@@ -1,8 +1,10 @@
+import { ArtsActionTypes } from '../actions/artsActions';
+
 export default function artsReducer(
 	state = {
 		byIds: {}
 	},
-	action: any,
+	action: ArtsActionTypes,
 ) {
 	const artObj: any = {};
 	switch (action.type) {
