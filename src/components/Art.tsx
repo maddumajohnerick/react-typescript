@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import * as $ from 'jquery';
+import { IStateProps, IDispatchProps, IOwnProps } from '../containers/ArtContainer';
 
-class Art extends React.Component<any, {}> {
+type Props = IStateProps & IDispatchProps & IOwnProps;
+
+class Art extends React.Component<Props, {}> {
 	likeArt(event: any) {
 		event.preventDefault();
 

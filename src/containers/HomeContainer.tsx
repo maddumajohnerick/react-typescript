@@ -4,11 +4,11 @@ import Home from '../components/Home';
 import { IReduxState } from '../store/rootReducer';
 import * as artsActions from '../actions/artsActions';
 
-interface IStateProps {
+export interface IStateProps {
 	arts: string[],
 }
 
-interface IDispatchProps {
+export interface IDispatchProps {
 	artsActions: typeof artsActions
 }
 

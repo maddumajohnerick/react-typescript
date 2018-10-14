@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { IStateProps, IDispatchProps, IOwnProps } from '../containers/ArtViewContainer';
 
-class ArtView extends React.Component<any, {}> {
+type Props = IStateProps & IDispatchProps & IOwnProps;
+
+class ArtView extends React.Component<Props, {}> {
 	componentDidMount() {
 		const { artsActions, art, artId } = this.props;
 

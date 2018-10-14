@@ -1,8 +1,11 @@
 import * as React from 'react';
 
 import Art from '../containers/ArtContainer'
+import { IStateProps, IDispatchProps } from '../containers/HomeContainer';
 
-class Home extends React.Component<any, {}> {
+type Props = IStateProps & IDispatchProps;
+
+class Home extends React.Component<Props, {}> {
 	componentDidMount() {
 		const { artsActions, arts } = this.props;
 

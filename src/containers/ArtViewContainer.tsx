@@ -4,17 +4,22 @@ import ArtView from '../components/ArtView';
 import * as artsActions from '../actions/artsActions';
 import { IReduxState } from '../store/rootReducer';
 import { IArt } from '../types/art.types';
+import { IMatch } from '../types/common.types';
 
-interface IStateProps {
+export interface IStateProps {
 	artId: string,
 	art: IArt
 }
 
-interface IDispatchProps {
+export interface IDispatchProps {
 	artsActions: typeof artsActions
 }
 
-function mapStateToProps(state: IReduxState, ownProps: any): IStateProps {
+export interface IOwnProps {
+	match: IMatch
+}
+
+function mapStateToProps(state: IReduxState, ownProps: IOwnProps): IStateProps {
 	const artId = ownProps.match.params.artId;
 	return {
 		artId,
@@ -28,7 +33,7 @@ function mapDispatchToProps(dispatch: any): IDispatchProps {
 	};
 }
 
-export default connect<IStateProps, IDispatchProps, void>(
+export default connect<IStateProps, IDispatchProps, IOwnProps>(
 	mapStateToProps,
 	mapDispatchToProps
 )(ArtView);

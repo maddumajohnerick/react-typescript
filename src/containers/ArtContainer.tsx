@@ -5,17 +5,20 @@ import * as artsActions from '../actions/artsActions';
 import { IReduxState } from '../store/rootReducer';
 import { IArt } from '../types/art.types';
 
-interface IStateProps {
+export interface IStateProps {
 	art: IArt,
 	liked: boolean
 }
 
-interface IDispatchProps {
+export interface IDispatchProps {
 	artsActions: typeof artsActions
 }
 
-function mapStateToProps(state: IReduxState, ownProps: any): IStateProps {
-	console.log(state.arts.byIds)
+export interface IOwnProps {
+	_id: number
+}
+
+function mapStateToProps(state: IReduxState, ownProps: IOwnProps): IStateProps {
 	return {
 		art: state.arts.byIds[ownProps._id],
 		liked: state.arts.byIds[ownProps._id].liked,
@@ -28,7 +31,7 @@ function mapDispatchToProps(dispatch: any): IDispatchProps {
 	};
 }
 
-export default connect<IStateProps, IDispatchProps, void>(
+export default connect<IStateProps, IDispatchProps, IOwnProps>(
 	mapStateToProps,
 	mapDispatchToProps
 )(Art);
