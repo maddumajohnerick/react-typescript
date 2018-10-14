@@ -3,7 +3,7 @@ export interface IArt {
     title: string,
     src: string,
     createdAt: string,
-    liked: string,
+    liked: boolean,
 }
 
 export interface IArtState {
