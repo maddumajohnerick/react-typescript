@@ -1,9 +1,12 @@
 import { ArtsActionTypes } from '../actions/artsActions';
+import { IArtState } from '../types/art.types';
+
+export const initialState: IArtState = {
+	byIds: {}
+}
 
 export default function artsReducer(
-	state = {
-		byIds: {}
-	},
+	state = initialState,
 	action: ArtsActionTypes,
 ) {
 	const artObj: any = {};
