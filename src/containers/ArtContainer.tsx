@@ -7,7 +7,7 @@ import { IArt } from '../types/art.types';
 
 export interface IStateProps {
 	art: IArt,
-	liked: boolean
+	liked?: boolean
 }
 
 export interface IDispatchProps {

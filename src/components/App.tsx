@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
-class App extends React.Component {
+export class App extends React.Component {
 	render() {
 		const { children } = this.props;
 

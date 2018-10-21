@@ -26,7 +26,6 @@ export function getArts() {
 					allIds: Object.keys(byIds),
 					byIds,
 				};
-
 				dispatch(getArtsSuccess(resObj));
 			});
 	};
