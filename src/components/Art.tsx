@@ -23,7 +23,6 @@ export class Art extends React.Component<Props, {}> {
 
 	render() {
 		let { art } = this.props;
-		console.log("CHANGED")
 
 		return (
 			<Link to={`/view/${art._id}`} className="col-md-3">
