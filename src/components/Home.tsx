@@ -5,7 +5,7 @@ import { IStateProps, IDispatchProps } from '../containers/HomeContainer';
 
 type Props = IStateProps & IDispatchProps;
 
-class Home extends React.Component<Props, {}> {
+export class Home extends React.Component<Props, {}> {
 	componentDidMount() {
 		const { artsActions, arts } = this.props;
 
