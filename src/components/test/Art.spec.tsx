@@ -17,12 +17,12 @@ const art: IArt = {
 describe('<Art />', () => {
     describe('render()', () => {
         it('should render', () => {
-            const component = shallow(<Art art={art} artsActions={artsActions} _id={1}/>);
+            const component = shallow(<Art art={art} artsActions={artsActions} _id={'1'}/>);
             expect(component).toBeTruthy();
         });
         it('should click the like', () => {
             const spy = jest.spyOn(Art.prototype, 'likeArt');
-            const component = shallow(<Art art={art} artsActions={artsActions} _id={1}/>);
+            const component = shallow(<Art art={art} artsActions={artsActions} _id={'1'}/>);
             component.find('.like-holder').simulate('click', { preventDefault() {} });
             expect(spy).toHaveBeenCalled();
         });

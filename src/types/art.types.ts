@@ -8,7 +8,7 @@ export interface IArt {
 
 export interface IArtState {
     byIds: {
-        [key: number]: IArt;
+        [key: string]: IArt;
     },
     allIds?: string[]
 }

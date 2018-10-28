@@ -4,7 +4,7 @@ import { IStateProps, IDispatchProps, IOwnProps } from '../containers/ArtViewCon
 
 type Props = IStateProps & IDispatchProps & IOwnProps;
 
-class ArtView extends React.Component<Props, {}> {
+export class ArtView extends React.Component<Props, {}> {
 	componentDidMount() {
 		const { artsActions, art, artId } = this.props;
 

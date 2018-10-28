@@ -15,7 +15,7 @@ export interface IDispatchProps {
 }
 
 export interface IOwnProps {
-	_id: number
+	_id: string
 }
 
 function mapStateToProps(state: IReduxState, ownProps: IOwnProps): IStateProps {
